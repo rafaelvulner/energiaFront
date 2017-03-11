@@ -1,12 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-  <h:head>
-    <title>Argentum Web</title>
-  </h:head>
-  <h:body>
-    <h:outputText value ="#{olaMundoBean.horario}" />
-   </h:body>
+<h:head>
+	<title>Argentum Web</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<p:panel header="Cadastro">
+
+			<h:panelGrid columns="2">
+				<p:outputLabel value="NOME" />
+				<p:inputText/>
+				
+				<p:outputLabel value="CPF" />
+				<p:inputMask mask="999.999.999-99"/>
+				
+				<p:outputLabel />
+
+				<p:commandButton value="Salvar" />
+			</h:panelGrid>
+
+		</p:panel>
+	</h:form>
+
+
+
+</h:body>
 </html>
