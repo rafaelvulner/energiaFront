@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Energia</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="resources/css/style.css" />
+
+
+</h:head>
+<h:body>
+
+	<div class="container">
+		<div class="col-md-6 central">
+
+
+
+			<p:panel header="Cadastro">
+
+
+
+				<h:form enctype="multipart/form-data">
+
+
+					<h1>Escolha a imagem que você deseja salvar</h1>
+					<p:fileUpload fileUploadListener="#{fileUploadView.uploadImg}"
+						mode="advanced" dragDropSupport="false" update="messages"
+						sizeLimit="500000" fileLimit="3"
+						allowTypes="/(\.|\/)(gif|jpeg|png)$/" required=""/>
+
+					<p:growl id="messages" showDetail="true" />
+
+					<h4>Escolha a região de interesse</h4>
+
+					<div class="">
+						<h:selectOneRadio value="#{fileUploadView.regiao}">
+							<img src="https://image.freepik.com/icones-gratis/quadrado-contorno-da-forma_318-50117.jpg" width="30px" /><f:selectItem itemValue="quadrado" itemLabel="Quadrado" id="teste"/>
+							<img src="https://image.freepik.com/icones-gratis/circulo-esboco_318-48580.jpg" width="30px" style="margin-left: 60px" /><f:selectItem itemValue="circulo" itemLabel="Circulo" />
+							<img src="http://4.bp.blogspot.com/-OaAtplmgCTQ/UdHvU8F-yJI/AAAAAAAACwU/MzSgmiDb3eY/s504/LOSANGO.gif" width="40px" style="margin-left: 60px"/><f:selectItem itemValue="losango" itemLabel="Losango" />
+						</h:selectOneRadio>
+					</div>
+					
+					
+					<div>
+					<p:outputLabel value="Escreva a categoria"/>
+					<p:inputText value="#{fileUploadView.categoria}"/>
+					</div>
+
+					<p:commandButton value="Salvar" id="nonAjax"
+						actionListener="#{fileUploadView.salvar}" ajax="false" />
+
+				</h:form>
+			</p:panel>
+
+
+		</div>
+	</div>
+
+
+</h:body>
+</html>
