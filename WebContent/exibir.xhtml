@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+	<title>Energia</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="resources/css/style.css" />
+
+
+</h:head>
+<h:body>
+
+	<div class="container">
+		<h:form>
+			<p:growl id="msgs" showDetail="true" />
+
+			<p:panel id="basic" header="Imagens" style="margin-bottom:20px">
+				<h:panelGrid columns="1" cellpadding="10">
+					<ui:repeat value="#{panelView.retornarImg}" var="item">
+					
+						
+							<h:graphicImage rendered="#{item.regiao == 'circulo'}"
+								value="#{item.caminho}" width="50px" styleClass="circulo" />
+						
+
+						
+							<h:graphicImage rendered="#{item.regiao == 'quadrado'}"
+								value="#{item.caminho}" width="50px" styleClass="quadrado" />
+						
+
+
+						
+							<h:graphicImage rendered="#{item.regiao == 'losango'}"
+								value="#{item.caminho}" width="50px" styleClass="oval" />
+						
+
+
+					</ui:repeat>
+
+				</h:panelGrid>
+
+				<div style="margin-top: 10px">
+					<p:button value="Voltar" href="index.xhtml" />
+				</div>
+			</p:panel>
+
+		</h:form>
+	</div>
+
+
+</h:body>
+</html>

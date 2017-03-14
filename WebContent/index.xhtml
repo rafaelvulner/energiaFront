@@ -8,7 +8,7 @@
 <h:head>
 	<title>Energia</title>
 	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		href="resources/css/bootstrap.css" />
 	<link rel="stylesheet" href="resources/css/style.css" />
 
 
@@ -16,7 +16,7 @@
 <h:body>
 
 	<div class="container">
-		<div class="col-md-6 central">
+		<div class="col-md-12 central">
 
 
 
@@ -30,8 +30,8 @@
 					<h1>Escolha a imagem que você deseja salvar</h1>
 					<p:fileUpload fileUploadListener="#{fileUploadView.uploadImg}"
 						mode="advanced" dragDropSupport="false" update="messages"
-						sizeLimit="500000" fileLimit="3"
-						allowTypes="/(\.|\/)(gif|jpeg|png)$/" required=""/>
+						
+						allowTypes="/(\.|\/)(gif|jpeg|png)$/" required="" />
 
 					<p:growl id="messages" showDetail="true" />
 
@@ -39,20 +39,34 @@
 
 					<div class="">
 						<h:selectOneRadio value="#{fileUploadView.regiao}">
-							<img src="https://image.freepik.com/icones-gratis/quadrado-contorno-da-forma_318-50117.jpg" width="30px" /><f:selectItem itemValue="quadrado" itemLabel="Quadrado" id="teste"/>
-							<img src="https://image.freepik.com/icones-gratis/circulo-esboco_318-48580.jpg" width="30px" style="margin-left: 60px" /><f:selectItem itemValue="circulo" itemLabel="Circulo" />
-							<img src="http://4.bp.blogspot.com/-OaAtplmgCTQ/UdHvU8F-yJI/AAAAAAAACwU/MzSgmiDb3eY/s504/LOSANGO.gif" width="40px" style="margin-left: 60px"/><f:selectItem itemValue="losango" itemLabel="Losango" />
+							<img
+								src="resources/imagensUtils/quadrado.jpg"
+								width="30px" />
+							<f:selectItem itemValue="quadrado" itemLabel="Quadrado"
+								id="teste" />
+							<img
+								src="resources/imagensUtils/circulo.jpg"
+								width="30px" style="margin-left: 60px" />
+							<f:selectItem itemValue="circulo" itemLabel="Circulo" />
+							<img
+								src="resources/imagensUtils/LOSANGO.gif"
+								width="40px" style="margin-left: 60px" />
+							<f:selectItem itemValue="losango" itemLabel="Losango" />
 						</h:selectOneRadio>
 					</div>
-					
-					
+
+
 					<div>
-					<p:outputLabel value="Escreva a categoria"/>
-					<p:inputText value="#{fileUploadView.categoria}"/>
+						<p:outputLabel value="Escreva a categoria" />
+						<p:inputText value="#{fileUploadView.categoria}" />
+					</div>
+					<div style="margin-top: 10px">
+						<p:commandButton value="Salvar" id="nonAjax"
+							actionListener="#{fileUploadView.salvar}" ajax="false" />
+
+						<p:button value="Acessar Imagens" href="exibir.xhtml" />
 					</div>
 
-					<p:commandButton value="Salvar" id="nonAjax"
-						actionListener="#{fileUploadView.salvar}" ajax="false" />
 
 				</h:form>
 			</p:panel>

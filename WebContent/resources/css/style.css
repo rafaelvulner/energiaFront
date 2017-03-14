@@ -9,3 +9,27 @@
 	margin-left:40px;
 }
 
+.circulo {
+        width: 100px;
+        height: 100px;
+        background: #66bb92;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+}
+
+.quadrado {	
+        width: 100px;
+        height: 100px;
+        background: #66BB92; /* Cor verde */
+
+}
+
+.oval {
+        width: 200px;
+        height: 100px;
+        background: #66bb92;
+        -moz-border-radius: 100px / 50px;
+        -webkit-border-radius: 100px / 50px;
+        border-radius: 100px / 50px;
+}
